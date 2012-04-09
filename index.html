@@ -1,0 +1,58 @@
+<!doctype html>
+<html manifest="cache.manifest" xmlns:ng="http://angularjs.org" xmlns:touch="urn:neochrome.touch-events" ng:app="Main">
+	<head>
+		<meta charset="utf-8">
+		<title>Listed</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width"/>
+		<link href="styles/main.css" rel="stylesheet"/>
+		<script src="angular-1.0.0rc2.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+	<body ng:controller="ItemsController">
+	
+		<header>
+			<nav ng:hide="editing">
+				<button class="lt icon-pencil" ng:click="editStart()"></button>
+				<button class="lt icon-check" ng:click="toggleChecked()" ng:show="checkedItems.length"></button>
+				<button class="lt icon-trash" ng:click="removeChecked()" ng:show="checkedItems.length")></button>
+			</nav>
+			<nav ng:show="editing">
+				<button class="lt icon-ok" ng:click="editSave()"></button>
+				<button class="lt icon-remove" ng:click="editCancel()"></button>
+			</nav>
+			<h2>{{checkedItems.length}} / {{items.length}}</h2>
+		</header>
+
+		<ul id="items">
+			<li>
+				<form name="newItem" ng:submit="add()">
+					<button class="icon-plus"></button>
+					<input type="text" placeholder="new item" name="text" ng:model="newItemText" ng:model-instant/>
+				</form>
+			</li>
+			<li ng:repeat="item in items">
+				<label class="{{item.checked&&'checked'}}">
+					<input type="checkbox" ng:model="item.checked" ng:click="toggle()"/>
+					<i class="{{item.checked&&'icon-check'||'icon-'}}"></i>
+					<span ng:hide="editing">{{item.text}}</span>
+					<input type="text" name="text" ng:model="item.text" ng:model-instant ng:show="editing"/>
+					<button class="rt icon-trash" ng:click="remove(item)"></button>
+				</label>
+			</li>
+		</ul>
+
+		<footer>
+			<nav ng:hide="editing">
+				<button class="lt icon-pencil" ng:click="editStart()"></button>
+				<button class="lt icon-check" ng:click="toggleChecked()" ng:show="checkedItems.length"></button>
+				<button class="lt icon-trash" ng:click="removeChecked()" ng:show="checkedItems.length")></button>
+			</nav>
+			<nav ng:show="editing">
+				<button class="lt icon-ok" ng:click="editSave()"></button>
+				<button class="lt icon-remove" ng:click="editCancel()"></button>
+			</nav>
+			<h2>{{checkedItems.length}} / {{items.length}}</h2>
+		</footer>
+
+	</body>
+</html>

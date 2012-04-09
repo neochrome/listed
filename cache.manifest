@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# v0.0.1
+
+angular-1.0.0rc2.min.js
+app.js
+index.html
+font/fontawesome-webfont.eot
+font/fontawesome-webfont.svg
+font/fontawesome-webfont.svgz
+font/fontawesome-webfont.ttf
+font/fontawesome-webfont.woff
+styles/font-awesome.css
+styles/main.css
+styles/reset.css
