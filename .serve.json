@@ -1,0 +1,4 @@
+{
+	"restrictedFiles": ["cache.manifest"],
+	"port": 8080
+}

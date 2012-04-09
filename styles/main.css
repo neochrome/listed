@@ -1,0 +1,33 @@
+@import url(reset.css);
+@import url(font-awesome.css);
+
+body,button { font-family: sans-serif; font-size: 20px; }
+.lt { float: left; }
+.rt { float: right; }
+
+button[class*="icon-"] { border: none; background: none; }
+
+header { border-bottom: 2px solid; width: 100%; height: 48px; }
+header { background-color: #ddd; border-color: #d2d2d2; }
+
+footer { border-top: 2px solid; width: 100%; height: 48px; }
+footer { background-color: #ddd; border-color: #bbb; }
+
+header h2, footer h2 { font-size: 40px; }
+header h2, footer h2 { float: right; margin: 5px; }
+header h2, footer h2 { color: #bbb; }
+
+header button, footer button { font-size: 35px; }
+header button, footer button { margin: 5px 10px; padding: 2px; }
+
+ul#items { border-top: 1px solid; width: 100%; }
+ul#items { border-color: #bbb; }
+ul#items li { display: block; padding: 10px 15px; }
+ul#items li { border-bottom: 1px solid; }
+ul#items li { color: #333; border-color: #ddd; }
+ul#items label { display: block; }
+ul#items label input[type="checkbox"] { display: none; }
+ul#items label.checked span { text-decoration: line-through; }
+ul#items label .icon-trash { visibility: hidden; }
+ul#items label.checked .icon-trash { visibility: visible; }
+
