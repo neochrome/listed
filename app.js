@@ -7,7 +7,9 @@ function ItemsController($scope, repository, confirm, $filter){
 	$scope.$watch('items', 'checkedItems = (items | filter:{checked:true})', true);
 
 	$scope.add = function(){
-		$scope.items.unshift({text:$scope.newItemText,checked:false});
+		var text = $scope.newItemText;
+		if(text == '') return;
+		$scope.items.unshift({text:text,checked:false});
 		repository.save($scope.items);
 		$scope.newItemText = '';
 	};
