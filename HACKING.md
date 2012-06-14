@@ -1,5 +1,8 @@
-Release:
---------
+Releasing:
+----------
+Pre-flight checklist:
+* Verify changes to cache.manifest 
+
 On master:
 
     git tag vX.X.X
